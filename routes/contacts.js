@@ -5,6 +5,15 @@ const { ObjectId } = require('mongodb');
 const { getDatabase } = require('./data/database.js');
 
 
+/**
+ * @swagger
+ * /contacts:
+ *   get:
+ *     description: Get all contacts
+ *     responses:
+ *       200:
+ *         description: Success
+ */
 router.get('/', async (req, res) => {
     try {
         const db = getDatabase();
@@ -32,6 +41,20 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+
+
+
+/**
+ * @swagger
+ * /contacts:
+ *   post:
+ *     description: Create a new contact
+ *     requestBody:
+ *       required: true
+ *     responses:
+ *       201:
+ *         description: Contact created
+ */
 router.post('/', async (req, res) => {
     try {
         const db = getDatabase();

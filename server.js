@@ -1,7 +1,13 @@
 const express = require('express');
 const mongodb = require('./routes/data/database.js'); 
-const port = process.env.PORT || 3000;
 const app = express();
+const port = process.env.PORT || 3000;
+
+
+
+app.use(express.json());
+
+
 
 app.get('/', (req, res) => {
     res.send("Helo World")
@@ -9,7 +15,9 @@ app.get('/', (req, res) => {
 
 app.use('/', require('./routes/index.js'));
 
-app.use('/', require('./routes/contacts.js'));
+app.use('/contacts', require('./routes/contacts.js'));
+
+
 
 
 mongodb.initdb(function(err) {

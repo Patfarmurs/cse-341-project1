@@ -1,28 +1,33 @@
-### Get all contacts
+
 GET http://localhost:3000/contacts
 Content-Type: application/json
 
 
-### Get a single contact by ID
+
+
 GET http://localhost:3000/contacts/{{682aeddc8c1733eee03ec3dd}}
 Content-Type: application/json
 
 
-### Create a new contact for next time
+
+### Create a new contact 
+
 POST http://localhost:3000/contacts
 Content-Type: application/json
 
 {
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john.doe@example.com",
-  "favoriteColor": "Green",
-  "birthday": "1979/01/10"
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "jane@example.com",
+    "favoriteColor": "Brown",
+    "birthday": "1990-01-01"
 }
 
-###
 
-### Update a contact by ID for next time
+
+
+### Update a contact by ID 
+
 PUT http://localhost:3000/contacts/{{682aeddc8c1733eee03ec3dd}}
 Content-Type: application/json
 
@@ -34,8 +39,8 @@ Content-Type: application/json
   "birthday": "1991/07/09"
 }
 
-###
 
 ### Delete a contact by ID for next time
+
 DELETE http://localhost:3000/contacts/{{682aeddc8c1733eee03ec3dd}}
 Content-Type: application/json
